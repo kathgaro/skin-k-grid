@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arima', cursive;
+}
+/* menu */
+.cabeza__span{
+    font-size: 0.7em;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+}
+.cabeza__menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 3em;
+}
+.cabeza__menu--logo{
+    font-weight: 700;
+}
+.cabeza__menu ul{
+    display: flex;
+    width: 24rem;
+    justify-content: space-around;
+}
+
+.cabeza__menu ul li{
+    list-style: none;
+}
+.cabeza__menu ul li a{
+    text-decoration: none;
+}
+/* aside */
+p{
+    color: white;
+    margin: 3em;
+}
+/* galeria */
+.galeria{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+.galeria__producto{
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}
+.galeria__producto img{
+    width: 14em;
+}
+/* GRID TEMPLATE*/
+.grid__setter{
+    box-shadow: 2px 4px 7px 1px #00000024;
+    background-color: white;
+    border-radius: 1em;
+}
+.grid__container{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows:5em 3fr 1fr 3em;
+    background-color: rgb(247, 247, 247);
+    grid-template-areas: "cabeza cabeza cabeza "
+                        "publi galeria galeria"
+                        "publi galeria galeria"
+                        "pie pie pie"
+    ;
+    gap: 5px;
+    justify-content: center;  
+}
+.cabeza{
+    grid-area: cabeza;
+}
+
+.publi{
+    grid-area: publi;
+}
+
+.galeria{
+    grid-area: galeria;
+}
+
+.pie{
+    grid-area: pie;
+}
+
+/* T A B L E T */
+
+@media(min-width: 300px) and (max-width: 576px){
+    body{
+        background-color: black;
+    }
+    .grid__container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 2fr 0.5fr;
+        grid-template-areas:"cabeza cabeza"
+                            "galeria galeria "
+                            "pie pie"
+        ;
+        gap: 5px;
+        background-color: rgb(243, 231, 11);
+    }
+    .cabeza__menu{
+        flex-direction: column;
+        margin-top: 0.4em;
+        height: auto;
+    }
+    .cabeza__menu--logo {
+        font-weight: 700;
+        font-size: 1.5em;
+    }
+
+    .publi{
+        display: none;
+    }
+    .galeria__producto{
+        margin: 1.2em;
+    }
+    .galeria__producto img{
+        width: 10em;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 1023px) {
+    .grid__container{
+        grid-template-columns: 1fr;
+        grid-template-areas:"cabeza"
+                            "galeria "
+                            "publi"
+                            "pie"
+        ;
+        gap: 5px;
+        background-color: rgb(243, 104, 11);
+    }
+
+}
